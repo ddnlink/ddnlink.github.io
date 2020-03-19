@@ -1,6 +1,6 @@
 # ddn.link
 
-<http://ddn.link>
+<http://demo.ddn.link>
 
 ## About
 
