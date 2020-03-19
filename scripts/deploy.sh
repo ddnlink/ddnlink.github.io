@@ -4,7 +4,7 @@ shopt -s extglob
 
 TEMP_PATH=".temp"
 
-# build docs
+# build website
 yarn build
 
 # prepare deploy
@@ -21,7 +21,7 @@ git config user.name "limsbase"
 
 # commit and push changes
 git add -A
-git commit --am -m "build: deploy documentation" --allow-empty
+git commit --am -m "build: deploy"
 git push -f git@github.com:ddnlink/ddn.link.git master:gh-pages
 
 # clean
