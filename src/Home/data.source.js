@@ -1,19 +1,26 @@
 import React from 'react';
 import logoB from '../assets/images/logoB.png';
 import logo from '../assets/images/logo_white.png';
-import wallet_image from '../assets/images/logo_white.png';
 import case_ebookchain from '../assets/images/case_ebookchain.png';
 import case_limschain from '../assets/images/case_limschain.png';
 import case_e_tour from '../assets/images/case_e_tour.png';
 import case_network from '../assets/images/case_network.png';
 import case_system from '../assets/images/case_system.png';
+import wallet from '../assets/images/wallet.png';
+import browser from '../assets/images/browser.png';
 
-let visual_image = '/visual_image.svg';
-let visual_hover = '/visual_hover.svg';
-let service_image = '/service_image.svg';
-let service_hover = '/service_hover.svg';
-let multi_image = '/multi_image.svg';
-let multi_hover = '/multi_hover.svg';
+let visual_image = '/static/visual_image.svg';
+let visual_hover = '/static/visual_hover.svg';
+let service_image = '/static/service_image.svg';
+let service_hover = '/static/service_hover.svg';
+let multi_image = '/static/multi_image.svg';
+let multi_hover = '/static/multi_hover.svg';
+let health = '/static/health.svg';
+let bigdata = '/static/bigdata.svg';
+let culture = '/static/culture.svg';
+let finance = '/static/finance.svg';
+let government = '/static/government.svg';
+let Iot = '/static/Iot.svg';
 
 export const Nav30DataSource = {
   wrapper: { className: 'header3 home-page-wrapper' },
@@ -26,15 +33,15 @@ export const Nav30DataSource = {
     className: 'header3-menu',
     children: [
       {
-        name: 'item3',
+        name: 'item0',
         className: 'header3-item',
         children: {
-          href: 'http://docs.ddn.link',
+          href: '/',
           children: [
             {
               children: (
                 <>
-                  <p>文档</p>
+                  <p>首页</p>
                 </>
               ),
               name: 'text',
@@ -63,6 +70,24 @@ export const Nav30DataSource = {
         name: 'item2',
         className: 'header3-item',
         children: {
+          href: 'http://docs.ddn.link',
+          children: [
+            {
+              children: (
+                <>
+                  <p>文档</p>
+                </>
+              ),
+              name: 'text',
+            },
+          ],
+        },
+      },
+
+      {
+        name: 'item3',
+        className: 'header3-item',
+        children: {
           href: 'http://ubl.ddn.link',
           children: [
             {
@@ -76,9 +101,8 @@ export const Nav30DataSource = {
           ],
         },
       },
-
       {
-        name: 'item0',
+        name: 'item4',
         className: 'header3-item',
         children: {
           href: '#',
@@ -95,36 +119,66 @@ export const Nav30DataSource = {
         },
         subItem: [
           {
-            name: 'sub~k7x691wur9',
+            name: 'sub0',
             className: 'item-sub',
             children: {
               className: 'item-sub-item',
+              href: 'http://mainnet.ddn.link',
               children: [
-     
+                {
+                  name: 'image0',
+                  className: 'item-image',
+                  children: browser,
+                },
                 {
                   name: 'title',
                   className: 'item-title',
-                  children: '浏览器',
+                  children: '浏览器（主网）',
                 },
                 {
                   name: 'content',
                   className: 'item-content',
-                  children: '查看区块链数据',
+                  children: '查看主网区块链数据',
                 },
               ],
             },
           },
           {
-            name: 'sub~k7x691wupj6',
+            name: 'sub1',
             className: 'item-sub',
             children: {
               className: 'item-sub-item',
+              href: 'http://testnet.ddn.link',
               children: [
                 {
                   name: 'image0',
                   className: 'item-image',
-                  children:
-                    'https://gw.alipayobjects.com/zos/rmsportal/ruHbkzzMKShUpDYMEmHM.svg',
+                  children: browser,
+                },
+                {
+                  name: 'title',
+                  className: 'item-title',
+                  children: '浏览器（测试网）',
+                },
+                {
+                  name: 'content',
+                  className: 'item-content',
+                  children: '对应最新代码的区块链',
+                },
+              ],
+            },
+          },
+          {
+            name: 'sub2',
+            className: 'item-sub',
+            children: {
+              className: 'item-sub-item',
+              href: 'http://wallet.ddn.link',
+              children: [
+                {
+                  name: 'image1',
+                  className: 'item-image',
+                  children: wallet,
                 },
                 {
                   name: 'title',
@@ -166,7 +220,7 @@ export const Banner50DataSource = {
         className: 'banner5-explain',
         children: (
           <>
-            <p>帮杰出的企业更杰出</p>
+            <p>让杰出的企业更杰出</p>
           </>
         ),
       },
@@ -233,7 +287,7 @@ export const Content00DataSource = {
               name: 'image',
               className: 'content0-block-icon',
               children: visual_image,
-              children_hover: visual_hover
+              children_hover: visual_hover,
             },
             {
               name: 'title',
@@ -337,6 +391,8 @@ export const Content00DataSource = {
     ],
   },
 };
+
+// 服务领域
 export const Content30DataSource = {
   wrapper: { className: 'home-page-wrapper content3-wrapper' },
   page: { className: 'home-page content3' },
@@ -375,15 +431,14 @@ export const Content30DataSource = {
         children: {
           icon: {
             className: 'content3-icon',
-            children:
-              'https://zos.alipayobjects.com/rmsportal/ScHBSdwpTkAHZkJ.png',
+            children: culture,
           },
           textWrapper: { className: 'content3-text' },
           title: {
             className: 'content3-title',
             children: (
               <>
-                <p>文化娱乐</p>
+                <p>文创版权</p>
               </>
             ),
           },
@@ -407,8 +462,7 @@ export const Content30DataSource = {
         children: {
           icon: {
             className: 'content3-icon',
-            children:
-              'https://zos.alipayobjects.com/rmsportal/NKBELAOuuKbofDD.png',
+            children: health,
           },
           textWrapper: { className: 'content3-text' },
           title: {
@@ -439,8 +493,7 @@ export const Content30DataSource = {
         children: {
           icon: {
             className: 'content3-icon',
-            children:
-              'https://zos.alipayobjects.com/rmsportal/xMSBjgxBhKfyMWX.png',
+            children: government,
           },
           textWrapper: { className: 'content3-text' },
           title: {
@@ -471,8 +524,7 @@ export const Content30DataSource = {
         children: {
           icon: {
             className: 'content3-icon',
-            children:
-              'https://zos.alipayobjects.com/rmsportal/MNdlBNhmDBLuzqp.png',
+            children: finance,
           },
           textWrapper: { className: 'content3-text' },
           title: {
@@ -503,8 +555,7 @@ export const Content30DataSource = {
         children: {
           icon: {
             className: 'content3-icon',
-            children:
-              'https://zos.alipayobjects.com/rmsportal/UsUmoBRyLvkIQeO.png',
+            children: Iot,
           },
           textWrapper: { className: 'content3-text' },
           title: {
@@ -535,8 +586,7 @@ export const Content30DataSource = {
         children: {
           icon: {
             className: 'content3-icon',
-            children:
-              'https://zos.alipayobjects.com/rmsportal/ipwaQLBLflRfUrg.png',
+            children: bigdata,
           },
           textWrapper: { className: 'content3-text' },
           title: { className: 'content3-title', children: '大数据' },
@@ -606,7 +656,8 @@ export const Feature50DataSource = {
               <>
                 <h3>LIMSChain 亿检链</h3>
                 <p>
-                  <b>全国首款基于区块链的检验检测平台</b>。<span>
+                  <b>全国首款基于区块链的检验检测平台</b>。
+                  <span>
                     该产品符合国家国际标准，可有效帮助检验检测机构提高效率、降低成本，提升检验检测机构信息化水平，充分利用区块链安全、可追溯的特点，在保证检测数据脱敏，保护检测企业数据安全的基础上，打通检验检测机构内部的数据壁垒，实现内部数据和业务的互联共通，给检验检测机构赋能，为检测数据赋值。
                   </span>
                 </p>
@@ -614,7 +665,7 @@ export const Feature50DataSource = {
                   <br />
                 </p>
                 <p>
-                  LIMSChain检验检测系统是我司自主研发，底层区块链首批通过国家权威机构可信区块链测试，应用层符合国家标准，场景覆盖疾控、食品、药品、环境、消防、计量等多个行业的检测实验室，包含样品、检测、质控、文档、库存等几十个基础管理模块，简单易用。
+                  LIMSChain检验检测平台，底层区块链首批通过工信部可信区块链测试，应用层符合GB17025标准，场景覆盖疾控、食品、药品、环境、消防、计量等多个行业的检测实验室，包含样品、检测、质控、文档、库存等几十个基础管理模块，简单易用。
                 </p>
               </>
             ),
@@ -697,7 +748,8 @@ export const Feature50DataSource = {
                 <span>
                   <h3>让游客挣钱的旅游系统</h3>
                   <p>
-                    智慧旅游，让游客在旅游中挣钱。它是一个以用户亲身经历的旅游方案销售为创新点的新式旅游平台，以游客为中心，把游客经历的导游、地接、旅行社、景点、酒店、商场、交通等每个环节的服务，快速地整合成物美价廉的旅游方案，并可直接出售该方案，从而把整个旅游业态纳入该平台，从而帮助大量中、小、微旅游及其相关企业更加轻松地开展互联网营销，提升企业经营水平，提高效率，提升竞争力，同时给游客提供更好的旅游体验。<br />
+                    智慧旅游，让游客在旅游中挣钱。它是一个以用户亲身经历的旅游方案销售为创新点的新式旅游平台，以游客为中心，把游客经历的导游、地接、旅行社、景点、酒店、商场、交通等每个环节的服务，快速地整合成物美价廉的旅游方案，并可直接出售该方案，从而把整个旅游业态纳入该平台，从而帮助大量中、小、微旅游及其相关企业更加轻松地开展互联网营销，提升企业经营水平，提高效率，提升竞争力，同时给游客提供更好的旅游体验。
+                    <br />
                   </p>
                   <h3>
                     <br />
@@ -738,7 +790,8 @@ export const Feature50DataSource = {
               <>
                 <span>
                   <h3>
-                    区块链助力新能源<br />
+                    区块链助力新能源
+                    <br />
                   </h3>
                   <p>
                     智能微网是基于区块链，由分布式电源、储能装置、能量转换装置、计量装置等组成的小型发电、配电和交易系统。智能微网为光伏发电小区、海岛微网、边防林牧场、智慧小镇、西部不通电地区、农村微网等带来福音。利用可再生能源（风能、光伏），将光伏发电、配置储能系统，通过区块链让买家、卖家自由地在系统内买卖电力。居民和本地的智能电网可以使用数字货币进行交易。
@@ -779,7 +832,8 @@ export const Feature50DataSource = {
               <>
                 <span>
                   <h3>
-                    链上期货系统<br />
+                    链上期货系统
+                    <br />
                   </h3>
                   <p>
                     区块链+金融，国内第一个链上期货系统。它借助DDN区块链技术，实现了链上发售代金券、购物卡等功能，帮助商家便捷的销售自己的商品，方便消费者提前买到大闸蟹、东北大米等稀缺的商品，及时转让手中未能消费的代金券或购物卡等。该产品已经被某地方政府用于销售当地著名的土特产，在广大的农村市场，为保障农民收益、扩大农民创收探索出了一条颠覆性的创新之路。
@@ -833,10 +887,26 @@ export const Footer10DataSource = {
         title: { children: '产品' },
         childWrapper: {
           children: [
-            { name: 'link0', href: '#', children: '产品更新记录' },
-            { name: 'link1', href: '#', children: 'API文档' },
-            { name: 'link2', href: '#', children: '快速入门' },
-            { name: 'link3', href: '#', children: '参考指南' },
+            {
+              name: 'link0',
+              href: 'https://github.com/ddnlink/ddn/releases',
+              children: '产品更新记录',
+            },
+            {
+              name: 'link1',
+              href: 'http://docs.ddn.link/#/api',
+              children: 'API文档',
+            },
+            {
+              name: 'link2',
+              href: 'http://docs.ddn.link/#/guide',
+              children: '快速入门',
+            },
+            {
+              name: 'link3',
+              href: 'http://docs.ddn.link/#/docs',
+              children: '参考指南',
+            },
           ],
         },
       },
@@ -854,7 +924,8 @@ export const Footer10DataSource = {
               children: (
                 <>
                   <p>
-                    https://github.com/ddnlink<br />
+                    https://github.com/ddnlink
+                    <br />
                   </p>
                 </>
               ),
@@ -885,8 +956,21 @@ export const Footer10DataSource = {
         },
         childWrapper: {
           children: [
-            { href: '#', name: 'link0', children: 'Facebook' },
-            { href: '#', name: 'link1', children: 'Tiwtter' },
+            {
+              href: 'https://www.facebook.com/DDNlink',
+              name: 'link0',
+              children: 'Facebook',
+            },
+            {
+              href: 'https://twitter.com/DDN_link',
+              name: 'link1',
+              children: 'Twitter',
+            },
+            {
+              href: 'https://t.me/joinchat/H-kmwQ0dbU9fofIgd1nvVg',
+              name: 'link2',
+              children: 'Telegram',
+            },
           ],
         },
       },

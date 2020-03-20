@@ -12,7 +12,7 @@ mkdir $TEMP_PATH
 cd $TEMP_PATH
 git init
 git pull git@github.com:ddnlink/ddn.link.git gh-pages
-rm -rf *
+# rm -rf *
 cp -r ../dist/* .
 
 # git config
