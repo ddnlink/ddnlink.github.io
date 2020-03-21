@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from 'antd';
 
@@ -9,7 +8,9 @@ export const getChildrenToRender = (item, i, isHover) => {
   tag = item.href ? 'a' : tag;
   let children = item.children;
   if (typeof item.children === 'string' && item.children.match(isSvg)) {
-    children = React.createElement('img', { src: isHover ? item.children_hover : item.children });
+    children = React.createElement('img', {
+      src: isHover ? item.children_hover : item.children,
+    });
   }
 
   if (typeof item.children === 'string' && item.children.match(isImg)) {
@@ -18,7 +19,7 @@ export const getChildrenToRender = (item, i, isHover) => {
 
   if (item.name.indexOf('button') === 0 && typeof item.children === 'object') {
     children = React.createElement(Button, {
-      ...item.children
+      ...item.children,
     });
   }
   return React.createElement(tag, { key: i.toString(), ...item }, children);

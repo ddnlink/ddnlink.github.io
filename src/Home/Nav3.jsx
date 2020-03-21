@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import TweenOne from 'rc-tween-one';
-import { Menu, Dropdown } from 'antd';
+import { Menu } from 'antd';
 import { getLocale, setLocale, useIntl } from 'umi';
 import { getChildrenToRender } from './utils';
+import { UnorderedListOutlined } from '@ant-design/icons';
 
 const { Item, SubMenu } = Menu;
 
@@ -11,15 +12,17 @@ const Header3 = props => {
   const intl = useIntl();
 
   const currLang = getLocale();
-  const currLangIcon = '/static/' + currLang + '.png';
-  const currLangText = intl.formatMessage({ id: currLang });
+  // 目前仅支持中英文切换
+  const lang = currLang === 'zh-CN' ? 'en-US' : 'zh-CN';
+  const currLangIcon = '/static/' + lang + '.png';
+  const currLangText = intl.formatMessage({ id: lang });
 
   const phoneClick = () => {
     setPhoneOpen(!phoneOpen);
   };
 
-  const onSwitchLanguage = lang => {
-    setLocale(lang, false);
+  const onSwitchLanguage = () => {
+    setLocale(lang, true);
   };
 
   const { dataSource, isMobile } = props;
@@ -67,38 +70,33 @@ const Header3 = props => {
       </Item>
     );
   });
-  const moment = phoneOpen === undefined ? 300 : null;
 
-  const menuLang = (
-    <Menu>
-      <Menu.Item>
-        <div
-          className="Header-Language-Menu-Item"
-          onClick={onSwitchLanguage.bind(this, 'zh-CN')}
-        >
-          <img
-            src="/static/zh-CN.png"
-            width="16px"
-            className="Header-Language-Menu-Icon"
-          />
-          {intl.formatMessage({ id: 'zh-CN' })}
-        </div>
-      </Menu.Item>
-      <Menu.Item>
-        <div
-          className="Header-Language-Menu-Item"
-          onClick={onSwitchLanguage.bind(this, 'en-US')}
-        >
-          <img
-            src="/static/en-US.png"
-            width="16px"
-            className="Header-Language-Menu-Icon"
-          />
-          {intl.formatHTMLMessage({ id: 'en-US' })}
-        </div>
-      </Menu.Item>
-    </Menu>
-  );
+  // 添加自定义的其他按钮
+  let additional = null;
+  const additionalItems = [
+    <Item key="switch-lang" onClick={onSwitchLanguage}>
+      <img
+        src={currLangIcon}
+        width="16px"
+        className="Header-Language-Menu-Icon"
+      />
+      {currLangText}
+    </Item>,
+  ];
+
+  if (isMobile) {
+    additional = additionalItems;
+  } else {
+    additional = (
+      <SubMenu key="additional" title={<UnorderedListOutlined />}>
+        {additionalItems}
+      </SubMenu>
+    );
+  }
+
+  navChildren.push(additional);
+
+  const moment = phoneOpen === undefined ? 300 : null;
 
   return (
     <TweenOne
@@ -156,16 +154,6 @@ const Header3 = props => {
           >
             {navChildren}
           </Menu>
-          <Dropdown overlay={menuLang}>
-            <div className="Header-Language-Menu-Item">
-              <img
-                src={currLangIcon}
-                width="16px"
-                className="Header-Language-Menu-Icon"
-              />
-              {currLangText}
-            </div>
-          </Dropdown>
         </TweenOne>
       </div>
     </TweenOne>

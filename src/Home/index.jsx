@@ -2,6 +2,7 @@
 /* eslint arrow-parens: 0 */
 import React from 'react';
 import { enquireScreen } from 'enquire-js';
+import { getLocale } from 'umi';
 
 import Nav3 from './Nav3';
 import Banner5 from './Banner5';
@@ -10,18 +11,18 @@ import Content3 from './Content3';
 import Feature5 from './Feature5';
 import Footer1 from './Footer1';
 
-import {
-  Nav30DataSource,
-  Banner50DataSource,
-  Content00DataSource,
-  Content30DataSource,
-  Feature50DataSource,
-  Footer10DataSource,
-} from './data.source';
+// import {
+//   Nav30DataSource,
+//   Banner50DataSource,
+//   Content00DataSource,
+//   Content30DataSource,
+//   Feature50DataSource,
+//   Footer10DataSource,
+// } from './data.source';
 import './less/antMotionStyle.less';
 
 let isMobile;
-enquireScreen((b) => {
+enquireScreen(b => {
   isMobile = b;
 });
 
@@ -38,7 +39,7 @@ export default class Home extends React.Component {
 
   componentDidMount() {
     // 适配手机屏幕;
-    enquireScreen((b) => {
+    enquireScreen(b => {
       this.setState({ isMobile: !!b });
     });
     // dva 2.0 样式在组件渲染之后动态加载，导致滚动组件不生效；线上不影响；
@@ -55,6 +56,23 @@ export default class Home extends React.Component {
   }
 
   render() {
+    let currentLang = getLocale();
+    let DataSource;
+    if (currentLang === 'zh-CN') {
+      DataSource = require('./data.source.zh_CN');
+    } else {
+      DataSource = require('./data.source.en_US');
+    }
+
+    const {
+      Nav30DataSource,
+      Banner50DataSource,
+      Content00DataSource,
+      Content30DataSource,
+      Feature50DataSource,
+      Footer10DataSource,
+    } = DataSource;
+
     const children = [
       <Nav3
         id="Nav3_0"
@@ -96,7 +114,7 @@ export default class Home extends React.Component {
     return (
       <div
         className="templates-wrapper"
-        ref={(d) => {
+        ref={d => {
           this.dom = d;
         }}
       >
