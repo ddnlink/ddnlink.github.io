@@ -54,7 +54,7 @@ export const Nav30DataSource = {
         name: 'item1',
         className: 'header3-item',
         children: {
-          href: '#',
+          href: 'http://docs.ddn.link/community/greenpaper',
           children: [
             {
               children: (
