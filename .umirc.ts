@@ -1,9 +1,13 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
-  base: '/ddn.link',
   favicon: '/favicon.ico',
   routes: [
-    { path: '/', component: '@/pages/index' },
+    { path: '/', component: './index' },
+    { path: '/product', component: './Product/wallet' },
   ],
+  locale: {
+    default: 'zh-CN',
+    baseNavigator: true,
+  },
 });
