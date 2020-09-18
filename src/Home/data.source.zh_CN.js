@@ -4,6 +4,7 @@ import logoB from '../assets/images/logoB.png';
 import logo from '../assets/images/logo_white.png';
 import case_ebookchain from '../assets/images/case_ebookchain.png';
 import case_limschain from '../assets/images/case_limschain.png';
+import case_hbl from '../assets/images/case_hbl.png';
 import case_e_tour from '../assets/images/case_e_tour.png';
 import case_network from '../assets/images/case_network.png';
 import case_system from '../assets/images/case_system.png';
@@ -54,7 +55,7 @@ export const Nav30DataSource = {
         name: 'item1',
         className: 'header3-item',
         children: {
-          href: 'http://docs.ddn.link/community/greenpaper',
+          href: 'http://datm.ddn.link/',
           children: [
             {
               children: (
@@ -85,23 +86,23 @@ export const Nav30DataSource = {
         },
       },
 
-      {
-        name: 'item3',
-        className: 'header3-item',
-        children: {
-          href: 'http://ubl.ddn.link',
-          children: [
-            {
-              children: (
-                <>
-                  <p>课程</p>
-                </>
-              ),
-              name: 'text',
-            },
-          ],
-        },
-      },
+      // {
+      //   name: 'item3',
+      //   className: 'header3-item',
+      //   children: {
+      //     href: 'http://ubl.ddn.link',
+      //     children: [
+      //       {
+      //         children: (
+      //           <>
+      //             <p>课程</p>
+      //           </>
+      //         ),
+      //         name: 'text',
+      //       },
+      //     ],
+      //   },
+      // },
 
       {
         name: 'item4',
@@ -643,6 +644,53 @@ export const Feature50DataSource = {
             className: 'content7-tag-name',
             children: (
               <>
+                <p>智慧党建</p>
+              </>
+            ),
+          },
+        },
+        content: {
+          className: 'content7-content',
+          text: {
+            className: 'content7-text',
+            md: 14,
+            xs: 24,
+            children: (
+              <>
+                <h3>红榜链——山东诸城市委主办</h3>
+                <p>
+                  <b>全国首款基于区块链的智慧党建信用平台</b>。
+                  <span>
+                    本案例从党员信用积分出发，构建党建管理+实体经济体系。传统的党员积分管理，都是党组织评价党员，是自上而下的管理模式，党组织任务重，积极性不高，党员反感不配合问题多，所以党员评价管理基本上都是不了了之。
+                  </span>
+                </p>
+                <p>
+                  <br />
+                </p>
+                <p>
+                  本案例借助区块链公开、透明、不可篡改的特性，将党员评价和积分的权利下放给每个党员，通过排行和积分记录党员个人信用，党组织仅制定规则、发现纠正问题，变被动为主动、变他评为自评，公正、可信，大大提高党员积极性和主动性，是一种新尝试。
+                </p>
+              </>
+            ),
+          },
+          img: {
+            className: 'content7-img',
+            md: 10,
+            xs: 24,
+            children: case_hbl,
+          },
+        },
+      },
+
+      {
+        name: 'block2',
+        tag: {
+          className: 'content7-tag',
+          icon: { children: 'tablet' },
+          text: {
+            className: 'content7-tag-name',
+            children: (
+              <>
                 <p>检测平台</p>
               </>
             ),
@@ -680,8 +728,9 @@ export const Feature50DataSource = {
           },
         },
       },
+
       {
-        name: 'block0',
+        name: 'block3',
         tag: {
           className: 'content7-tag',
           text: {
@@ -726,7 +775,7 @@ export const Feature50DataSource = {
         },
       },
       {
-        name: 'block2',
+        name: 'block4',
         tag: {
           className: 'content7-tag',
           text: {
@@ -769,7 +818,7 @@ export const Feature50DataSource = {
         },
       },
       {
-        name: 'elem~k7x4vx9hhqu',
+        name: 'block5',
         tag: {
           className: 'content7-tag',
           text: {
@@ -811,7 +860,7 @@ export const Feature50DataSource = {
         },
       },
       {
-        name: 'elem~k7x5a1fxcdt',
+        name: 'block6',
         tag: {
           className: 'content7-tag',
           text: {
