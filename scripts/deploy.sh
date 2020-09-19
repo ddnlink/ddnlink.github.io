@@ -11,7 +11,7 @@ yarn build
 mkdir $TEMP_PATH
 cd $TEMP_PATH
 git init
-git pull git@github.com:ddnlink/ddn.link.git gh-pages
+git pull git@github.com:ddnlink/ddnlink.github.io.git gh-pages
 # rm -rf *
 cp -r ../dist/* .
 
@@ -22,7 +22,7 @@ git config user.name "limsbase"
 # commit and push changes
 git add -A
 git commit --am -m "build: deploy"
-git push -f git@github.com:ddnlink/ddn.link.git master:gh-pages
+git push -f git@github.com:ddnlink/ddnlink.github.io.git master:gh-pages
 
 # clean
 cd -
