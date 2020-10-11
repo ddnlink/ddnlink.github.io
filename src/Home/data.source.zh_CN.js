@@ -72,7 +72,7 @@ export const Nav30DataSource = {
         name: 'item2',
         className: 'header3-item',
         children: {
-          href: 'http://docs.ddn.link',
+          href: 'http://docs.ddn.link/zh-CN',
           children: [
             {
               children: (
